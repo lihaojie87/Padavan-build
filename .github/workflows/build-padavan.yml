@@ -141,7 +141,12 @@ jobs:
         echo "CONFIG_FIRMWARE_ENABLE_IPV6=y" >> configs/templates/$TNAME.config
         sed -i '/CONFIG_FIRMWARE_INCLUDE_IPSET/d' configs/templates/$TNAME.config
         echo "CONFIG_FIRMWARE_INCLUDE_IPSET=y" >> configs/templates/$TNAME.config
-        
+        sed -i '/CONFIG_FIRMWARE_WIFI2_DRIVER/d' configs/templates/$TNAME.config
+        echo "CONFIG_FIRMWARE_WIFI2_DRIVER=4.1" >> configs/templates/$TNAME.config
+        sed -i '/CONFIG_FIRMWARE_WIFI5_DRIVER/d' configs/templates/$TNAME.config
+        echo "CONFIG_FIRMWARE_WIFI5_DRIVER=5.0.5.1" >> configs/templates/$TNAME.config
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_XFRM/d' configs/templates/$TNAME.config
+        echo "CONFIG_FIRMWARE_INCLUDE_XFRM=y" >> configs/templates/$TNAME.config
         #########################################################################################
         # 以下插件为 chongshengB 版本专属插件，hanwckf 版不可用!!!
         # 如需使用这些插件，请修改24行 BUILD_VERSION 为 chongshengB
